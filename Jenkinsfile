@@ -1,5 +1,7 @@
 #!/usr/bin/env groovy
 
+// Blah nr. 1
+
 // Based on https://stackoverflow.com/questions/36837683/how-to-perform-actions-for-failed-builds-in-jenkinsfile
 def pipeline(String label, Closure body) {
      node(label) {
