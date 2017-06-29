@@ -1,7 +1,5 @@
 #!/usr/bin/env groovy
 
-@Library('sec_ci_libs') _
-
 def master_branches = ["v0.5.3-zkfix", ] as String[]
 
 if (master_branches.contains(env.BRANCH_NAME)) {
@@ -12,9 +10,6 @@ if (master_branches.contains(env.BRANCH_NAME)) {
 }
 
 task_wrapper('mesos', master_branches) {
-    stage("Verify author") {
-        user_is_authorized(master_branches)
-    }
 
     stage('Cleanup workspace') {
         deleteDir()
